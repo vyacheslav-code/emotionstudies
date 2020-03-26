@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/false-memory-studies/static/css/main.8cfad223.chunk.css",
+    "main.js": "/false-memory-studies/static/js/main.4b03349c.chunk.js",
+    "main.js.map": "/false-memory-studies/static/js/main.4b03349c.chunk.js.map",
+    "runtime-main.js": "/false-memory-studies/static/js/runtime-main.f953df25.js",
+    "runtime-main.js.map": "/false-memory-studies/static/js/runtime-main.f953df25.js.map",
+    "static/js/2.ebd06545.chunk.js": "/false-memory-studies/static/js/2.ebd06545.chunk.js",
+    "static/js/2.ebd06545.chunk.js.map": "/false-memory-studies/static/js/2.ebd06545.chunk.js.map",
+    "index.html": "/false-memory-studies/index.html",
+    "precache-manifest.908a4be6a9f6b9574d141d6271902822.js": "/false-memory-studies/precache-manifest.908a4be6a9f6b9574d141d6271902822.js",
+    "service-worker.js": "/false-memory-studies/service-worker.js",
+    "static/css/main.8cfad223.chunk.css.map": "/false-memory-studies/static/css/main.8cfad223.chunk.css.map",
+    "static/js/2.ebd06545.chunk.js.LICENSE.txt": "/false-memory-studies/static/js/2.ebd06545.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f953df25.js",
+    "static/js/2.ebd06545.chunk.js",
+    "static/css/main.8cfad223.chunk.css",
+    "static/js/main.4b03349c.chunk.js"
+  ]
+}
