@@ -157,13 +157,17 @@ function App() {
   }
 
   const finish = () => {
-    axios.post('/data', {
-      group,
-      dish,
-      mark,
-      checks,
-      imageChecks
-    })
+    const url = 'https://api.telegram.org/bot1106278055:AAGigFvur0fNqe_FcwwBjkJZ4Ottm5Yzekw/sendMessage';
+    axios.post(url, {
+      chat_id: '-483728903',
+      text: JSON.stringify({
+        group,
+        dish,
+        mark,
+        checks,
+        imageChecks
+      })
+    });
     setSlide(6);
   }
 
