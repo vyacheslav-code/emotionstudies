@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+body {
+  margin: 5% 20%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  width: 100%;
+  font-size: 34px !important;
+  margin: 24px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+span {
+  font-size: 34px !important;
+}
+
+.MuiFormControl-root {
+  width: 100%;
+}
+
+.MuiSlider-root, .MuiFormControl-root {
+  margin: 32px 0 !important;
+}
+
+.MuiTypography-root {
+  margin-bottom: 24px !important;
+}
+
+h4.word {
+  margin-top: 40vh !important;
+  font-size: 48px !important;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 10% 5%;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .MuiTypography-root {
+    font-size: 24px !important;
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    width: 100%;
+    font-size: 24px !important;
+    margin: 0 !important;
+  }
+
+  .MuiSlider-root, .MuiFormControl-root {
+    margin: 16px 0 !important;
+  }
+
+  .MuiTypography-root {
+    margin-bottom: 12px !important;
+  }
+
+  img[alt="много символов"] {
+    width: 350px;
+    height: 350px;
   }
 }
