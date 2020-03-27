@@ -108,7 +108,7 @@ function App() {
   const [slide, setSlide] = useState(0);
   const [group, setGroup] = useState(null);
   const [dish, setDish] = useState('');
-  const [mark, setMark] = useState(1);
+  const [mark, setMark] = useState(undefined);
   const [expReady, setExpReady] = useState(false);
   const [wordsEffectTrigger, setWordsEffectTrigger] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
@@ -212,7 +212,7 @@ function App() {
       return (
         <Grid container>
           <Typography variant="h4" align="center">
-            Какое ваше любимое кулинарное блюдо? Опишите в нескольких словах, что вам в нем нравится больше всего?
+            Какое ваше любимое кулинарное блюдо? Опишите в нескольких словах, что вам в нем нравится больше всего? <b>ОБЯЗАТЕЛЬНО</b>
           </Typography>
           <TextField value={dish} id="filled-basic" label="Опишите" variant="filled" onChange={e => setDish(e.target.value)}/>
           <Typography variant="h4" align="center">
@@ -221,13 +221,18 @@ function App() {
           <Slider 
             min={1} 
             max={10} 
-            value={mark} 
+            value={mark ? mark : 1} 
             onChange={(evt, newVal) => setMark(newVal)} 
             step={1}
             marks 
           />
           <Grid item xs={12}>
-            <Button variant="contained" color="primary" onClick={() => setExpReady(true)}>
+            <Button 
+              disabled={mark === undefined || dish === ''} 
+              variant="contained" 
+              color="primary" 
+              onClick={() => setExpReady(true)}
+            >
               Дальше
             </Button>
           </Grid>
@@ -250,7 +255,7 @@ function App() {
       return (
         <Grid container>
           <Typography variant="h4" align="center">
-            Попробуйте вспомнить эти слова, и отметить в списке те, которые появлялись на экране
+            Попробуйте вспомнить эти слова, и отметить в списке те, которые появлялись на экране. <b>ОТМЕТЬТЕ ХОТЯ-БЫ ОДНО</b>
           </Typography>
           {Object.entries(checks).map(([key, value]) => (
             <Grid item xs={12} key={key} alignContent="center">
@@ -268,7 +273,12 @@ function App() {
           ))
           }
           <Grid item xs={12}>
-            <Button variant="contained" color="primary" onClick={() => setSlide(4)}>
+            <Button 
+              disabled={JSON.stringify(checks) === JSON.stringify(CHECKS)} 
+              variant="contained" 
+              color="primary" 
+              onClick={() => setSlide(4)}
+            >
               Дальше
             </Button>
           </Grid>
@@ -298,7 +308,7 @@ function App() {
     if (slide === 5) {
       return <Grid container>
         <Typography variant="h4" align="center">
-          А сейчас среди нарисованных фигур выберите те, которые видели на предыдущей картинке
+          А сейчас среди нарисованных фигур выберите те, которые видели на предыдущей картинке. <b>ВЫБЕРИТЕ ХОТЯ-БЫ ОДНУ</b>
         </Typography>
         {Object.entries(imageChecks).map(([key, value]) => (
           <Grid item xs={12} key={key} alignContent="center">
@@ -316,7 +326,12 @@ function App() {
           ))
         }
         <Grid item xs={12}>
-          <Button variant="contained" color="primary" onClick={finish}>
+          <Button 
+            disabled={JSON.stringify(imageChecks) === JSON.stringify(IMAGE_CHECKS)}
+            variant="contained" 
+            color="primary" 
+            onClick={finish}
+          >
             Закончить тест
           </Button>
         </Grid> 
